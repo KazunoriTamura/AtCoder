@@ -1,0 +1,5 @@
+s = input()
+a = list(s)
+b = list(map(int,a))
+c = sum(b)
+print(c)
