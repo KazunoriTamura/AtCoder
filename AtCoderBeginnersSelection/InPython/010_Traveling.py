@@ -1,67 +1,21 @@
 N = int(input())
 plan = [input().split() for i in range(N)]
 
-def check(t,z,memo={}):
-    # 時刻tに(x,y)にいることは可能か？
+def check(t,z):
+    # 時刻tにz=(x,y)にいることは可能か？
     x = z[0]
     y = z[1]
-    if (t,tuple(z)) in memo:
-        return memo[(t,tuple(z))]
-    elif ( abs(x) + abs(y) ) > t:
+    if ( abs(x) + abs(y) ) > t:
         flag = 0
     elif ( abs(x) + abs(y) ) == t:
         flag = 1
-    elif t == 1:
-        if x == 1 and y == 0:
-            flag = 1
-        elif x == 0 and y == 1:
-            flag = 1
-        elif x == -1 and y == 0:
-            flag = 1
-        elif x == 0 and y == -1:
-            flag = 1
-        else:
-            flag = 0
-    elif t == 2:
-        if x == 2 and y == 0:
-            flag = 1
-        elif x == 1 and y == 1:
-            flag = 1
-        elif x == 0 and y == 2:
-            flag = 1
-        elif x == -1 and y == 1:
-            flag = 1
-        elif x == -2 and y == 0:
-            flag = 1
-        elif x == -1 and y == -1:
-            flag = 1
-        elif x == 0 and y == -2:
-            flag = 1
-        elif x == 1 and y == -1:
-            flag = 1
-        elif x == 0 and y == 0:
-            flag = 1
-        else:
-            flag = 0
     else:
-        flag2 = check(t-1,[x-1,y])
-        if flag2:
-            flag = 1
-        else:
-            flag3 = check(t-1,[x,y-1])
-            if flag3:
+        for i in range(t//2+1):
+            t_new = t - 2*i
+            if ( abs(x) + abs(y) ) == t_new:
                 flag = 1
             else:
-                flag4 = check(t-1,[x+1,y])
-                if flag4:
-                    flag = 1
-                else:
-                    flag5 = check(t-1,[x,y+1])
-                    if flag5:
-                        flag = 1
-                    else:
-                        flag = 0
-    memo[(t,tuple(z))] = flag
+                flag = 0
     return flag
 
 for i in range(N):
