@@ -1,3 +1,3 @@
 # AtCoder
-AtCoder用のプログラムをアップする  
-主にPython  
+AtCoder用のプログラムをアップする<br>
+言語はいろいろ<br>
