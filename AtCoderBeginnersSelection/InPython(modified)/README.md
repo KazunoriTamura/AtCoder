@@ -1,5 +1,4 @@
-# AtCoder Beginners Selection In Python
-AtCoder Beginners Selectionを初めて解いたときのコード<br>
+# AtCoder Beginners Selection In Python (modified)
+AtCoder Beginners Selectionを２回目に解いたときのコード<br>
 Pythonの練習用に解いた<br>
-ACできればOKというスタンスのため，かなり汚い<br>
-Pythonを書くのも初めてで苦労した<br>
+１回目よりも多少は綺麗なコードになっているはず
