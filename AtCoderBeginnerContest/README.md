@@ -1,0 +1,3 @@
+# AtCoderBeginnerContest
+AtCoderBeginnerContestを過去問として解いたときのコード
+かなり適当&汚い
